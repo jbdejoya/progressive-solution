@@ -1,7 +1,16 @@
 $primary-color: #233b5f;
+$secondary-color: #faa428;
+
+h1, h2, h3, h4, h5, h6 {
+	color: $primary-color !important;
+}
 
 p {
 	font-weight: 100 !important;
+}
+
+a {
+	transition: 0.3s;
 }
 
 #home-nav {
@@ -28,13 +37,89 @@ p {
 	padding-top: 7rem;
 }
 
+section {
+	padding: 7rem 0;
+	h3 {
+		font-weight: 500;
+		span {
+			display: block;
+			color: $secondary-color;
+			font-size: 1rem;
+		}
+	}
+}
+
 #homepage {
 	.hero {
 		background: url(../img/hero.svg) no-repeat right 3rem center;
 		background-size: 43rem;
 		height: 78vh;
+		.button-group {
+			margin-top: 3rem;
+		}
 	}
 }
+
+#services {
+	.services {
+		margin-top: 3rem;
+		.callout {
+			background: #FCF5EC;
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+			border: none;
+			transition: 0.3s;
+			&:hover {
+				background: $primary-color;
+				.service {
+					&:before {
+						background-color: white;
+					}
+				}
+				h4 {
+					color: white !important;
+				}
+				p {
+					color: white;
+				}
+			}
+			h4 {
+				font-size: 1rem;
+				font-weight: 500;
+			}
+			.service {
+				&:before {
+					content: "";
+					display: block;
+					background: rgba(255, 255, 255, 0.5); 
+					
+					margin-bottom: 1rem;
+					width: 60px;
+					height: 60px;
+					border-radius: 50%;
+				}
+			}
+			.digital-strategy {
+				&:before {
+					background: rgba(255, 255, 255, 0.5) url(../img/digital-strategy.svg) no-repeat center;
+					background-size: 3.1rem !important;
+				}
+			}
+			.website-development {
+				&:before {
+					background: rgba(255, 255, 255, 0.5) url(../img/website-development.svg) no-repeat center;
+					background-size: 2.3rem !important;
+				}
+			}
+		}
+	}
+}
+
+#aboutUs {
+	background: url(../img/about-us.svg) no-repeat left -3rem center;
+	background-size: 43rem;
+}
+
 @charset 'utf-8';
 
 @import 'settings';
