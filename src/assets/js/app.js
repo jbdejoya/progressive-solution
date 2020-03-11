@@ -15,3 +15,13 @@ require('foundation-sites');
 
 
 $(document).foundation();
+
+	$('.thank-you').hide();
+
+	$('.submit, .thank-you').on(
+	  'click',
+	  function() 
+	  {
+	    $('.contact-form, .thank-you').toggle()
+	  }
+	);
