@@ -19,6 +19,23 @@ a {
 }
 
 .nav {
+	/* Small only */
+	@media screen and (max-width: 39.9375em) {
+		.grid-container {
+			padding: 0px;
+			.top-bar {
+				background: $primary-color !important;
+				width: 100%;
+				.top-bar-left {
+					display: none;
+				}
+				a {
+					color: white;
+					font-size: 13px;
+				}
+			}
+		}	
+	}
 	.top-bar {
 		background: none !important;
 		padding-left: 0px;
@@ -40,10 +57,28 @@ a {
 
 .hero {
 	padding-top: 7rem;
+	/* Small only */
+	@media screen and (max-width: 39.9375em) {
+		background-position: center bottom 3rem !important;
+		padding-top: 3rem;
+	}
+	/* Medium Down */
+	@media screen and (max-width: 63.9375em) {
+		background-size: 21rem !important;
+	}
 }
 
 section {
 	padding: 7rem 0;
+	/* Small only */
+	@media screen and (max-width: 39.9375em) {
+		background-position: center bottom 3rem !important;
+		padding: 3rem 0;
+	}
+	/* Medium Down */
+	@media screen and (max-width: 63.9375em) {
+		background-size: 21rem !important;
+	}
 	h3 {
 		font-weight: 500;
 		span {
@@ -98,7 +133,6 @@ section {
 					content: "";
 					display: block;
 					background: rgba(255, 255, 255, 0.5); 
-					
 					margin-bottom: 1rem;
 					width: 60px;
 					height: 60px;
@@ -136,12 +170,86 @@ section {
 #aboutUs {
 	background: url(../img/about-us.svg) no-repeat left -3rem center;
 	background-size: 43rem;
+	/* Small only */
+	@media screen and (max-width: 39.9375em) {
+		padding-bottom: 15rem;
+	}
+}
+
+#caseStudies {
+	.projects {
+		margin-top: 3rem;
+	}
+	a {	
+		display: block;
+		position: relative;
+		width: 100%;
+		transition: 0.3s;
+		&:hover {
+			.overlay {
+				z-index: 1;
+			}
+		}
+		.overlay {
+			position: absolute;
+			background: #FCF5EC !important;
+			color: #233b5f;
+			padding: 15px 1rem 0;
+			height: 50px !important;
+			width: 100% !important;
+			bottom: 0px;
+			border-radius: 0 0 3px 3px;
+			z-index: 0;
+			transition: 0.3s;
+			p {
+				color: $primary-color !important;
+				font-size: 13px;
+				font-weight: 500 !important;
+				padding-bottom: 0px;
+				span {
+					position: absolute;
+					top: 15px;
+					right: 1rem;
+				}
+			}
+		}
+		.callout {
+			height: 300px !important;
+			border: none;
+			border-radius: 3px;
+		}
+		.pupbox {
+			background: url(https://pupbox.com/img/1@2x.webp) no-repeat center;
+			background-size: cover;
+		}
+		.csp-labs {
+			background: url(https://csplabs.com/wp-content/uploads/2018/09/felix-russell-saw-609922-unsplash.jpg) no-repeat center;
+			background-size: cover;
+		}	
+		.barn-and-willow {
+			background: url(https://cdn.shopify.com/s/files/1/0455/8913/files/trisha4.jpg?v=1489168579) no-repeat center;
+			background-size: cover;
+		}		
+		.engage3 {
+			background: url(https://cdn.andnowuknow.com/thumbnails/engage3_body_2019_2.jpg?d_U4enXWVUZjECCLfR51zRPrtv7lNc8j) no-repeat center;
+			background-size: cover;
+		}	
+		.cold-stone {
+			background: url(https://www.silive.com/resizer/4vgZnLA3CLRRMGMDFBM2FAyocoY=/1280x0/smart/arc-anglerfish-arc2-prod-advancelocal.s3.amazonaws.com/public/7O4MKINFOJBE3I2ONG7TRC6OSE.jpg) no-repeat center;
+			background-size: cover;
+		}
+
+	}
 }
 
 #contact {	
 	background: url(../img/chat.svg) no-repeat left 5rem center;
 	background-size: 35rem;
+	padding-top: 1rem;
 	padding-bottom: 0px;
+	@media screen and (max-width: 39.9375em) {
+		background: none;
+	}
 	.contact {
 		background: url(../img/mailbox.svg) no-repeat right 3rem bottom;
 		background-size: 10rem;
@@ -157,7 +265,16 @@ section {
 }
 
 #jobContact {
-	
+	background: white url(../img/mailbox.svg) no-repeat right 3rem bottom;
+	background-size: 10rem;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
 }
 
 #jobs {
@@ -165,19 +282,27 @@ section {
 		background: url(../img/job.svg) no-repeat right 3rem center;
 		background-size: 43rem;
 		height: 78vh;
+		a {
+			font-weight: 500;
+			p {
+				font-weight: 500;
+				.fas {
+					animation: wiggle 2.5s infinite;
+				}
+			}
+		}
 	}
 	.content {
 		.tabs {
 			border: none;
 			.tabs-title {
-				background: none;
 				a {
 					padding-left: 0;
+					background: none !important;
 				}
 			}
 			.is-active {
 				a {
-					background: none !important;
 					font-weight: bold;
 				}
 			}
